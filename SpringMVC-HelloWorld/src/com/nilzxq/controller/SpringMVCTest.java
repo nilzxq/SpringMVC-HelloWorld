@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.nilzxq.entity.UserEntity;
 @RequestMapping("/springmvc")
 @Controller
 public class SpringMVCTest {
@@ -12,6 +14,18 @@ public class SpringMVCTest {
 	 * 常量大写
 	 */
 	private static final String SUCCESS="success";
+	/**
+	 * springmvc会按请求参数名和POJO属性名进行自动匹配为该填充对象的属性值
+	 * 支持级联属性
+	 * @param user
+	 * @return 
+	 * 2016年11月26日
+	 */
+	@RequestMapping("/testPojo")
+	private String testPojo(UserEntity user){
+		System.out.println("this is testPojo user:"+user.toString());
+		return SUCCESS;
+	}
 	/**
 	 * 通过@RequestParam 可以绑定请求传入参数 required默认为true 参数必须要传入false 参数可以不传入defaultValue 设置默认值
 	 * @param username
