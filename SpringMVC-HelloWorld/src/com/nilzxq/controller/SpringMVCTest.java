@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/springmvc")
 @Controller
 public class SpringMVCTest {
@@ -11,6 +12,18 @@ public class SpringMVCTest {
 	 * 常量大写
 	 */
 	private static final String SUCCESS="success";
+	/**
+	 * 通过@RequestParam 可以绑定请求传入参数 required默认为true 参数必须要传入false 参数可以不传入defaultValue 设置默认值
+	 * @param username
+	 * @param age
+	 * @return 
+	 * 2016年11月26日
+	 */
+	@RequestMapping(value="/testRequestParam")
+	public String testRequestParam(@RequestParam("username")String username,@RequestParam(value="age",required=false,defaultValue="18")Integer age){
+		System.out.println("this is testRequestParam username="+username+"---age="+age);
+		return SUCCESS;
+	}
 	//@PathVariable("id")||@PathVariable
 	/**
 	 * @PathVariable可以将URL中占位参数绑定到控制器处方法入参中
