@@ -21,6 +21,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <form action="/SpringMVC-HelloWorld/springmvc/testMethod" method="post">
+  <input type="submit" value="提交到/SpringMVC-HelloWorld/springmvc/testMethod post请求">
+  </form>
    <a href="/SpringMVC-HelloWorld/springmvc/springMVCTest">跳转到类路径+方法路径</a>
   </body>
 </html>

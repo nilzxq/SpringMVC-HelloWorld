@@ -2,6 +2,7 @@ package com.nilzxq.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/springmvc")
 @Controller
 public class SpringMVCTest {
@@ -9,6 +10,17 @@ public class SpringMVCTest {
 	 * 常量大写
 	 */
 	private static final String SUCCESS="success";
+	/**
+	 * method 主要设置请求方式
+	 * @return 
+	 * 2016年11月26日
+	 */
+	@RequestMapping(value="/testMethod",method=RequestMethod.POST)
+	public String testMethod(){
+		System.out.println("this is a testMethod");
+		return SUCCESS;
+		
+	}
 	/**
 	 * 不仅可以修饰方法，也可以修饰类
 	 * 1. @RequestMapping 除了修饰方法, 还可来修饰类
