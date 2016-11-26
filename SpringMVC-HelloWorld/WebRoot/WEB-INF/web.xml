@@ -16,11 +16,11 @@
 	<servlet>
 		<servlet-name>dispatcherServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param>
-			<param-name>contextConfigLocation</param-name>
+	<!--  	<init-param>
+			<param-name>contextConfigLocation</param-name>-->
 			<!-- 加載springmvc配置文件 -->
-			<param-value>classpath:springmvc.xml</param-value>
-		</init-param>
+		<!--  <param-value>classpath:springmvc.xml</param-value>
+		</init-param> -->
 		<load-on-startup>1</load-on-startup>
 		<!-- 如果默认不指定具体的springmvc具体路径，默认回去/WEB-INF/servlet-name+"-servlet.xml" -->
 	</servlet>
