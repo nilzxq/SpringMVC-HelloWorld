@@ -1,6 +1,7 @@
 package com.nilzxq.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/springmvc")
@@ -10,6 +11,21 @@ public class SpringMVCTest {
 	 * 常量大写
 	 */
 	private static final String SUCCESS="success";
+	//@PathVariable("id")||@PathVariable
+	/**
+	 * @PathVariable可以将URL中占位参数绑定到控制器处方法入参中
+	 * @param id
+	 * @return 
+	 * 2016年11月26日
+	 */
+	@RequestMapping("/testPathVariable/{id}")
+	public String testPathVariable(@PathVariable("id")Integer id){
+		System.out.println("this is id="+id);
+		System.out.println("this is testPathVariable");
+		return SUCCESS;
+		
+	}
+	
 	@RequestMapping("/*/testAnt")
 	public String testAnt(){
 		System.out.println("this is testAnt");
