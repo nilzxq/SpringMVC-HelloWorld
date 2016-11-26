@@ -18,12 +18,31 @@ public class SpringMVCTest {
 	 * @return 
 	 * 2016年11月26日
 	 */
+	@RequestMapping(value="/order/{id}",method=RequestMethod.DELETE)
+	public String delete(@PathVariable("id")Integer id){
+		System.out.println("删除操作：id="+id);
+		return SUCCESS;
+	}
+	@RequestMapping(value="/order/{id}",method=RequestMethod.GET)
+	public String get(@PathVariable("id")Integer id){
+		System.out.println("获取资源操作：id="+id);
+		return SUCCESS;
+	}
+	@RequestMapping(value="/order/{id}",method=RequestMethod.POST)
+	public String post(@PathVariable("id")Integer id){
+		System.out.println("添加操作：id="+id);
+		return SUCCESS;
+	}
+	@RequestMapping(value="/order/{id}",method=RequestMethod.PUT)
+	public String put(@PathVariable("id")Integer id){
+		System.out.println("更新操作：id="+id);
+		return SUCCESS;
+	}
 	@RequestMapping("/testPathVariable/{id}")
 	public String testPathVariable(@PathVariable("id")Integer id){
 		System.out.println("this is id="+id);
 		System.out.println("this is testPathVariable");
 		return SUCCESS;
-		
 	}
 	
 	@RequestMapping("/*/testAnt")

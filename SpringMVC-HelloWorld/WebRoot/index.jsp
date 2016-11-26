@@ -21,6 +21,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+   <form action="/SpringMVC-HelloWorld/springmvc/order/1" method="post">
+  <input name="_method" value="PUT">
+  <input type="submit" value="put">
+  </form>
+   <form action="/SpringMVC-HelloWorld/springmvc/order/1" method="post">
+  <input type="submit" value="post">
+  </form>
+   <form action="/SpringMVC-HelloWorld/springmvc/order/1" method="post">
+  <input name="_method" value="DELETE">
+  <input type="submit" value="delete">
+  </form>
+  <form action="/SpringMVC-HelloWorld/springmvc/order/1" method="get">
+  <input type="submit" value="get">
+  </form>
   <a href="/SpringMVC-HelloWorld/springmvc/testParams?userName=1000&age=11">跳转到testParams请求地址</a>
   <form action="/SpringMVC-HelloWorld/springmvc/testMethod" method="post">
   <input type="submit" value="提交到/SpringMVC-HelloWorld/springmvc/testMethod post请求">
