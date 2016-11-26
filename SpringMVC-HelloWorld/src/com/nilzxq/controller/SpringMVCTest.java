@@ -10,6 +10,11 @@ public class SpringMVCTest {
 	 * 常量大写
 	 */
 	private static final String SUCCESS="success";
+	@RequestMapping("/*/testAnt")
+	public String testAnt(){
+		System.out.println("this is testAnt");
+		return SUCCESS;
+	}
 	@RequestMapping(value="/testParams",params={"userName","age!=10"})
 	public String testParams(){
 		System.out.println("this is testParams");
