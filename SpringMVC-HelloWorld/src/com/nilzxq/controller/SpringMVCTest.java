@@ -1,0 +1,28 @@
+package com.nilzxq.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+@RequestMapping("/springmvc")
+@Controller
+public class SpringMVCTest {
+	/**
+	 * 常量大写
+	 */
+	private static final String SUCCESS="success";
+	/**
+	 * 不仅可以修饰方法，也可以修饰类
+	 * 1. @RequestMapping 除了修饰方法, 还可来修饰类
+	 * 2.
+	 *  1). 类定义处: 提供初步的请求映射信息。相对于 WEB 应用的根目录
+	 *  2). 方法处: 提供进一步的细分映射信息。 相对于类定义处的 URL。
+	 *      若类定义处未标注 @RequestMapping，则方法处标记的 URL相对于 WEB 应用的根目录
+	 * @return 
+	 * 2016年11月26日
+	 */
+	@RequestMapping("/springMVCTest")
+	public String springMVCTest(){
+		System.out.println("This is a springMVCTest");
+		return SUCCESS;
+	}
+
+}
