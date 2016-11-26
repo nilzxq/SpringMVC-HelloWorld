@@ -1,10 +1,13 @@
 package com.nilzxq.controller;
 
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.nilzxq.entity.UserEntity;
 @RequestMapping("/springmvc")
@@ -13,6 +16,20 @@ public class SpringMVCTest {
 	/**
 	 * 常量大写
 	 */
+	/**
+	 * 可以通过ModelAndView 设置视图转发页面、转发参数
+	 * @return 
+	 * 2016年11月26日
+	 */
+	@RequestMapping(value="/testModelAndView")
+	public ModelAndView testModelAndView(){
+		System.out.println("this is testModelAndView");
+		String modelAndViewPage=SUCCESS;
+		ModelAndView modelAndView=new ModelAndView(modelAndViewPage);
+		modelAndView.addObject("time",new Date());
+		modelAndView.addObject("name","nilzxq");
+		return modelAndView;
+	}
 	private static final String SUCCESS="success";
 	/**
 	 * springmvc会按请求参数名和POJO属性名进行自动匹配为该填充对象的属性值
