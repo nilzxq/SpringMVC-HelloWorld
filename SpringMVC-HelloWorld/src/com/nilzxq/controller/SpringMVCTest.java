@@ -16,6 +16,18 @@ public class SpringMVCTest {
 	/**
 	 * 常量大写
 	 */
+	
+	private static final String SUCCESS="success";
+	/**
+	 * 实例"redirect:/index.jsp"则重定向到index.jsp页面
+	 * @return 
+	 * 2016年11月26日
+	 */
+	@RequestMapping("/testRedirect")
+	public String testRedirect(){
+		System.out.println("testRedirect start......");
+		return "redirect:/index.jsp";
+	}
 	/**
 	 * 可以通过ModelAndView 设置视图转发页面、转发参数
 	 * @return 
@@ -30,7 +42,6 @@ public class SpringMVCTest {
 		modelAndView.addObject("name","nilzxq");
 		return modelAndView;
 	}
-	private static final String SUCCESS="success";
 	/**
 	 * springmvc会按请求参数名和POJO属性名进行自动匹配为该填充对象的属性值
 	 * 支持级联属性
@@ -43,6 +54,7 @@ public class SpringMVCTest {
 		System.out.println("this is testPojo user:"+user.toString());
 		return SUCCESS;
 	}
+	
 	/**
 	 * 通过@RequestParam 可以绑定请求传入参数 required默认为true 参数必须要传入false 参数可以不传入defaultValue 设置默认值
 	 * @param username
