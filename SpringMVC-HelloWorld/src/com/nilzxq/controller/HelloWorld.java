@@ -3,16 +3,16 @@ package com.nilzxq.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 /**
- * ±íÊ¾Îªspringmvc¿ØÖÆÆ÷
- * @author zxq @date 2016Äê11ÔÂ26ÈÕ
+ * è¡¨ç¤ºä¸º springmvcæ§åˆ¶å™¨
+ * @author zxq @date 2016å¹´11æœˆ26æ—¥
  *
  */
 @Controller
 public class HelloWorld {
 	/**
-	 * ¿ØÖÆÆ÷ÀàÖĞ·½·¨ÉÏ¼ÓÈë¸Ã×¢ÊÍ@RequestMappingÎªÇëÇóÂ·¾¶
+	 * æ§åˆ¶å™¨ç±»ä¸­æ–¹æ³•ä¸ŠåŠ å…¥è¯¥æ³¨è§£@RequestMapping ä¸ºè¯·æ±‚è·¯å¾„
 	 * @return 
-	 * 2016Äê11ÔÂ26ÈÕ
+	 * 2016å¹´11æœˆ26æ—¥
 	 */
 	@RequestMapping("/test")
 	public String test(){
