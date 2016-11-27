@@ -21,6 +21,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
+  <form action="/SpringMVC-HelloWorld/upload/" method="post" enctype="multipart/form-data">
+     上传文件<input type="file" name="file">
+     <input type="submit" value="提交">
+  </form>
   <form action="/SpringMVC-HelloWorld/springmvc/testPojo"method="post">
   用户名称<input type="text" name="username"><br/>
   用户年龄<input type="text" name="age"><br/>
