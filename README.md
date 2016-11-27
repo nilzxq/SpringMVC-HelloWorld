@@ -77,6 +77,7 @@ SpringMVC文件上传？<br/>
        <property name="maxUploadSize" value="204800" />
 </bean>
 2、前端页面实例<br/>
+
 	<form action="upload/" method="post" enctype="multipart/form-data">
 		上传文件<input type="file" name="file"> <input type="submit"
 			value="提交">
@@ -84,17 +85,19 @@ SpringMVC文件上传？<br/>
 
 
 3、后端代码实例<br/>
-@RequestMapping(value = "/upload", method = RequestMethod.POST)
-public String upload(@RequestParam(value = "file", required = false) MultipartFile file,
+
+@RequestMapping(value = "/upload", method = RequestMethod.POST)<br/>
+public String upload(@RequestParam(value = "file", required = false) MultipartFile file,<br/>
+			
 			HttpServletRequest request) {
 		String path = "c://itmayiedu";
-String fileName = file.getOriginalFilename();
-File targetFile = new File(path, fileName);
-if (!targetFile.exists()) {
-targetFile.mkdirs();
-}
-// 保存try {
-file.transferTo(targetFile);
+String fileName = file.getOriginalFilename();<br/>
+File targetFile = new File(path, fileName);<br/>
+if (!targetFile.exists()) {<br/>
+targetFile.mkdirs();<br/>
+}<br/>
+// 保存try {<br/>
+file.transferTo(targetFile);<br/>
 
 		} catch (Exception e) {
 
